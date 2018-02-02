@@ -4,4 +4,4 @@ public:
   int getSam() const;
 protected:
   int sam;
-}
+};
