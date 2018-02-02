@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-  Sample sm
+  Sample sm;
   cout << "Hello World!" << endl;
   cout << sm.getSam();
   return 0;
