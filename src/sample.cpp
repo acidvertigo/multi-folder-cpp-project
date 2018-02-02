@@ -2,6 +2,6 @@
 
 Sample::Sample : sam(10) { };
 Sample::~Sample() {};
-int Sample::getSam() {
+int Sample::getSam() const {
   return sam;
 }
