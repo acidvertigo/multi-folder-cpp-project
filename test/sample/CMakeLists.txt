@@ -2,7 +2,7 @@
 file(GLOB TEST_SRC_FILES *.cpp)
 
 set(INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/inc )
-target_include_directories(samplerate PUBLIC ${INCLUDE_DIRS})
+target_include_directories(samplee PUBLIC ${INCLUDE_DIRS})
 
 add_executable(samplee ${TEST_SRC_FILES})
 target_link_libraries(samplee gmock_main)
