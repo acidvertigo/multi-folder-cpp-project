@@ -21,7 +21,7 @@ FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
 FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
 
-add_subdir({$PROJ_PATH}/src/sample)
+add_subdirectory({$PROJ_PATH}/src/sample)
 
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
