@@ -4,6 +4,6 @@ file(GLOB TEST_SRC_FILES *.cpp)
 set(INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/inc/ )
 include_directories( ${INCLUDE_DIRS} )
 
-add_library(samplee STATIC ${TEST_SRC_FILES})
-target_link_libraries(samplee gmock_main)
+add_executable(samplee ${TEST_SRC_FILES})
+target_link_libraries(samplee sample gmock_main)
 add_test(NAME sample_test COMMAND samplee)
