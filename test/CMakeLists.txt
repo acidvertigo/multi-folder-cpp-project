@@ -30,17 +30,4 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
-# Now simply link against gtest or gtest_main as needed. Eg
-file(GLOB TEST_SRC_FILES ${CMAKE_SOURCE_DIR}/test/*.cpp)
-set(INCLUDE_DIRS 
-  ${CMAKE_SOURCE_DIR}/include
-  ${CMAKE_SOURCE_DIR}/include/common/utils
-)
-include_directories(${INCLUDE_DIRS})
-message("-- Added include dir {$INCLUDE_DIRS}")
-
-# add_executable(samplerate ${TEST_SRC_FILES})
-add_executable(samplerate samplerate.cpp)
-target_include_directories(samplerate PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(samplerate gmock_main)
-add_test(NAME samplerate_test COMMAND samplerate)
+ADD_SUBDIRECTORY(sample/)
