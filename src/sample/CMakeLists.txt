@@ -10,18 +10,15 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 SET( PROJ_NAME      "sample" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
-SET( PROJ_LIBRARIES "sample" )
-SET( PROJ_INCLUDES  "inc" )
+SET( PROJ_LIBRARIES "" )
+SET( PROJ_INCLUDES  "../../inc" )
 PROJECT( ${PROJ_NAME} )
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
 #-------------------------------------------------------------------------------
-FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
-FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
-
-
-add_subdir({$PROJ_PATH}/src/sample)
+FILE( GLOB_RECURSE PROJ_SOURCES *.cpp )
+FILE( GLOB_RECURSE PROJ_HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
@@ -50,5 +47,5 @@ endif(MSVC)
 #	GENERATE EXECUTABLES
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
-ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
+ADD_LIBRARY (${PROJ_NAME} STATIC ${PROJ_SOURCES})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
