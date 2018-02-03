@@ -21,7 +21,7 @@ FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
 FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
 
-add_subdirectory(/src/sample/)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/sample/)
 
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
