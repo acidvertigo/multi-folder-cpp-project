@@ -11,7 +11,7 @@ SET( PROJ_NAME      "sample" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
-SET( PROJ_INCLUDES  "../../inc" )
+SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}"/inc" )
 PROJECT( ${PROJ_NAME} )
 
 #-------------------------------------------------------------------------------
@@ -23,24 +23,23 @@ FILE( GLOB_RECURSE PROJ_HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
 #-------------------------------------------------------------------------------
-# list(APPEND LIBRARIES
+# LIST(APPEND LIBRARIES
 #
 # )
 # 
 # # Remove duplicate library dependencies. 
-# list(REMOVE_DUPLICATES LIBRARIES) 
+# LIST(REMOVE_DUPLICATES LIBRARIES) 
 
 #-------------------------------------------------------------------------------
 #	COMPILE FLAGS
-#-------------------------------------------------------------------------------
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 17)
+#-------------------------------------------------------------------------------SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+SET(CMAKE_CXX_STANDARD 17)
 
 if(MSVC)
-	add_compile_options(/MP)
-	add_compile_options(/std:c++17)
+	ADD_COMPILE_OPTIONS(/MP)
+	ADD_COMPILE_OPTIONS(/std:c++17)
 elseif(CMAKE_COMPILER_IS_GNUCXX)
-	add_compile_options(-std=c++17)
+	ADD_COMPILE_OPTIONS(-std=c++17)
 endif(MSVC)
 
 #-------------------------------------------------------------------------------
