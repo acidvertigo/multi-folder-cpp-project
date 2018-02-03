@@ -2,7 +2,7 @@
 #include "sample/sample.h"
 
 using namespace std;
-using namespace Sample;
+using namespace Foo;
 
 int main() {
   Sample sm;

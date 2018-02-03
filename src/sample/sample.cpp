@@ -1,6 +1,6 @@
 #include "sample/sample.h"
 
-using namespace Sample;
+using namespace Foo;
 
 int Sample::getSam() const {
   return sam;

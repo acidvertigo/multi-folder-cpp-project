@@ -1,4 +1,4 @@
-namespace Sample {
+namespace Foo {
 
 class Sample {
 public:
