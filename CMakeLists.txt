@@ -21,8 +21,8 @@ ENABLE_TESTING()
 FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
 FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
-ADD_SUBDIRECTORY(${CMAKE_SOURCE_DIR}/src/sample/)
-ADD_SUBDIRECTORY(${CMAKE_SOUDCE_DIR}/test)
+ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/sample/ )
+ADD_SUBDIRECTORY( ${CMAKE_SOUDCE_DIR}/test/ )
 
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
