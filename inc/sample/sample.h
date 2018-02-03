@@ -1,3 +1,5 @@
+namespace Sample {
+
 class Sample {
 public:
   virtual ~Sample() = default;
@@ -5,3 +7,5 @@ public:
 protected:
   int sam;
 };
+
+}
