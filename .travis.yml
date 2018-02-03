@@ -20,5 +20,5 @@ script:
   - gcc -v && g++ -v && cmake --version
   - cmake .
   - make
-  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ -ibuild/Release/googletest-src/ -ibuild/Debug/CMakeFiles/ -ibuild/Release/CMakeFiles/ -I inc/ .
+  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -igoogletest-src/ -iCMakeFiles/ -I inc/ .
   - ./app
