@@ -7,7 +7,7 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 #-------------------------------------------------------------------------------
 #	PROJECT SETTINGS
 #-------------------------------------------------------------------------------
-SET( PROJ_NAME      "samplee" )
+SET( PROJ_NAME      "sample" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
@@ -45,11 +45,11 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 #	GENERATE EXECUTABLES
 #-------------------------------------------------------------------------------
-INSTALL(TARGETS ${PROJ_NAME}
+INSTALL(TARGETS samplee
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
     CONFIGURATIONS Debug)
-INSTALL(TARGETS ${PROJ_NAME}
+INSTALL(TARGETS samplee
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release
     CONFIGURATIONS Release)
