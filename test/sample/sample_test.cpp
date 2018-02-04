@@ -14,12 +14,12 @@ public:
 protected:
      Sample * sm;
  
-     virtual void SetUp()
+     virtual void SetUp() override
      {      
          sm = new Sample(11);
      }
 
-     virtual void TearDown()
+     virtual void TearDown() override
      {
         delete sm;
      }
