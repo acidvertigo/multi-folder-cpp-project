@@ -28,7 +28,7 @@ script:
   - cmake -D CMAKE_BUILD_TYPE=Release ../../
   - make && make install
   - ctest
-  - cd ../..
+  - cd ../../
   - rm -rf build
   - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -Iinc/ .
   - tree -a

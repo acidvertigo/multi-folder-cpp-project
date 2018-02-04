@@ -52,6 +52,8 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
+set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_DEBUG program-debug )
+set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_RELEASE program-release )
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 # Use the automatically determined RPATH values
@@ -59,7 +61,7 @@ set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
-    LIBRARY DESTINATION /lib/Debug/
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
     CONFIGURATIONS Debug)
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release
