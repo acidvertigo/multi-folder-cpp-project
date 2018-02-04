@@ -11,7 +11,7 @@ SET( PROJ_NAME      "sample" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
-SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}"/inc" )
+SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc )
 PROJECT( ${PROJ_NAME} )
 
 #-------------------------------------------------------------------------------
