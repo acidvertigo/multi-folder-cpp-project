@@ -20,12 +20,15 @@ script:
   - export CXX=/usr/bin/g++-6
   - gcc -v && g++ -v && cmake --version
   - mkdir build && mkdir build/Debug && mkdir build/Release
-  - cd build
-  - cmake -D CMAKE_BUILD_TYPE=Debug ..
-  - cmake -D CMAKE_BUILD_TYPE=Release ..
+  - cd build/Debug
+  - cmake -D CMAKE_BUILD_TYPE=Debug ../../
   - make && make install
   - ctest
-  - cd ..
+  - cd ../Release
+  - cmake -D CMAKE_BUILD_TYPE=Release ../../
+  - make && make install
+  - ctest
+  - cd ../../
   - rm -rf build
   - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -Iinc/ .
   - tree -a -I ".git"
