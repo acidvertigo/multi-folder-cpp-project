@@ -71,12 +71,11 @@ if (CMAKE_BUILD_TYPE EQUAL "Release")
         RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
         LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
         CONFIGURATIONS Release)
-else (CMAKE_BUILD_TYPE EQUAL "Release")
+else ()
     INSTALL(TARGETS ${PROJ_NAME}
         RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
         LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
         CONFIGURATIONS Debug)
-
-endif (CMAKE_BUILD_TYPE EQUAL "Release")
+endif ()
 
 INCLUDE(InstallRequiredSystemLibraries)
