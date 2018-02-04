@@ -19,7 +19,7 @@ ENABLE_TESTING()
 #	SOURCE CODE
 #-------------------------------------------------------------------------------
 FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
-FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
+FIjLE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
 ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/sample/ )
 ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/test/ )
@@ -66,15 +66,17 @@ set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
-INSTALL(TARGETS ${PROJ_NAME}
-    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
-    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
-    CONFIGURATIONS Debug)
 if (CMAKE_BUILD_TYPE EQUAL "Release")
     INSTALL(TARGETS ${PROJ_NAME}
         RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
         LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
         CONFIGURATIONS Release)
+else
+    INSTALL(TARGETS ${PROJ_NAME}
+        RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
+        LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
+        CONFIGURATIONS Debug)
+
 endif (CMAKE_BUILD_TYPE EQUAL "Release")
 
 INCLUDE(InstallRequiredSystemLibraries)
