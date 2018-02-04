@@ -5,7 +5,7 @@ namespace Foo {
 
 class Sample {
 public:
-  Sample::Sample(int rhs);
+  Sample(int rhs);
   virtual ~Sample() = default;
   int getSam() const;
   
