@@ -8,8 +8,8 @@ using namespace ::Foo;
 // SampleRate Class test 
 TEST(sampleTest, getSam)
 {
-    Sample sm;
+    Sample sm(11);
     int value = sm.getSam();
-    ASSERT_EQ(value, 10);
+    ASSERT_EQ(value, 11);
 }
 //}
