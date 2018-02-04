@@ -52,13 +52,10 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
-
-set_target_properties( ${PROJ_NAME} PROPERTIES 
-         OUTPUT_NAME_DEBUG app-debug
-         OUTPUT_NAME_RELEASE app 
-)
-
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
+
+# Add debug postfix to executable name
+SET_TARGET_PROPERTIES(app PROPERTIES DEBUG_POSTFIX "-debug")
 
 # Use the automatically determined RPATH values
 set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
@@ -66,7 +63,6 @@ set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
-
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
