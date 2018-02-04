@@ -5,7 +5,7 @@ using namespace std;
 using namespace Foo;
 
 int main() {
-  Sample sm;
+  Sample sm(44100);
   cout << "Hello World!" << endl;
   cout << sm.getSam();
   return 0;
