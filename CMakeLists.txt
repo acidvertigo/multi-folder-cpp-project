@@ -66,16 +66,16 @@ set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
-if (CMAKE_BUILD_TYPE EQUAL "Release")
-    INSTALL(TARGETS ${PROJ_NAME}
-        RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
-        LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
-        CONFIGURATIONS Release)
-else ()
-    INSTALL(TARGETS ${PROJ_NAME}
-        RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
-        LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
-        CONFIGURATIONS Debug)
-endif ()
+
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
+    CONFIGURATIONS Release)
+
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
+    CONFIGURATIONS Debug)
+
 
 INCLUDE(InstallRequiredSystemLibraries)
