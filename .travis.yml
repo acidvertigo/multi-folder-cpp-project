@@ -30,5 +30,5 @@ script:
   - ctest
   - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ -ibuild/Release/googletest-src/  -ibuild/Release/CMakeFiles/ -ibuild/Debug/CMakeFiles/ -I../../inc/ ../../
   - cd ../..
-  - tree -filelimit 10
+  - tree --filelimit 10
   - ./app
