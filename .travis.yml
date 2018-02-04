@@ -22,7 +22,7 @@ script:
   - mkdir build && mkdir build/Debug && mkdir build/Release
   - cd build/Debug
   - cmake -D CMAKE_BUILD_TYPE=Debug ../../ --config Debug
-  - make
+  - make && make install
   - ctest
   - cd ../Release
   - cmake -D CMAKE_BUILD_TYPE=Release ../../ --config Release
