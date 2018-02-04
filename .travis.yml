@@ -18,8 +18,14 @@ script:
   - export CC=/usr/bin/gcc-6
   - export CXX=/usr/bin/g++-6
   - gcc -v && g++ -v && cmake --version
-  - cmake .
+  - mkdir build && mkdir build/Debug && mkdir build/Release
+  - cd build/Debug
+  - cmake -D CMAKE_BUILD_TYPE=Debug ../../
   - make
   - ctest
-  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -igoogletest-src/ -iCMakeFiles/ -I inc/ .
+  - cd ../Release
+  - cmake -D CMAKE_BUILD_TYPE=Release ../../
+  - make
+  - ctest
+  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ build/Release/googletest-src/  build/Release/CMakeFiles/ -I ../../inc/ ../../
   - ./app
