@@ -21,7 +21,7 @@ script:
   - gcc -v && g++ -v && cmake --version
   - mkdir build && mkdir build/Debug && mkdir build/Release
   - cd build
-  - cmake -D CMAKE_BUILD_TYPE=Debug ../../ --config/Debug
+  - cmake -D CMAKE_BUILD_TYPE=Debug ../../ --config Debug
   - make && make install
   - ctest
   - cmake -D CMAKE_BUILD_TYPE=Release ../../ --config Release
