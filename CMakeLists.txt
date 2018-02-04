@@ -19,7 +19,7 @@ ENABLE_TESTING()
 #	SOURCE CODE
 #-------------------------------------------------------------------------------
 FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
-FIjLE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
+FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
 ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/sample/ )
 ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/test/ )
