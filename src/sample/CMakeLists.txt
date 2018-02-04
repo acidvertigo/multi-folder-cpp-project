@@ -49,6 +49,9 @@ INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_LIBRARY (${PROJ_NAME} SHARED ${PROJ_SOURCES})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
+#-------------------------------------------------------------------------------
+#	DEFINE INSTALL FOLDERS
+#-------------------------------------------------------------------------------
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug

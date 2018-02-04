@@ -61,6 +61,9 @@ TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 # Use the automatically determined RPATH values
 set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 
+#-------------------------------------------------------------------------------
+#	DEFINE INSTALL FOLDERS
+#-------------------------------------------------------------------------------
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
