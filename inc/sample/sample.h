@@ -15,4 +15,4 @@ protected:
 
 }
 
-#endif /* _SAMPLE_H_
+#endif /* _SAMPLE_H_ */
