@@ -32,4 +32,4 @@ script:
   - rm -rf build
   - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -Iinc/ .
   - tree -a -I ".git"
-  - bin/Debug/app && bin/Release/app
+  - bin/Debug/app-debug && bin/Release/app
