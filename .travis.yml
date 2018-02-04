@@ -20,10 +20,11 @@ script:
   - export CXX=/usr/bin/g++-6
   - gcc -v && g++ -v && cmake --version
   - mkdir build && mkdir build/Debug && mkdir build/Release
-  - cd build
+  - cd build/Debug
   - cmake -D CMAKE_BUILD_TYPE=Debug ../../
   - make && make install
   - ctest
+  - cd ../Release
   - cmake -D CMAKE_BUILD_TYPE=Release ../../
   - make && make install
   - ctest
