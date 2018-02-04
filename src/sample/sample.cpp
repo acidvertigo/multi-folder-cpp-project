@@ -2,7 +2,7 @@
 
 using namespace Foo;
 
-Sample:Sample(int rhs) : sam(10) {
+Sample::Sample(int rhs) : sam(10) {
   sam = rhs;
 }
 
