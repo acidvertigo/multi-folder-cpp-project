@@ -45,6 +45,15 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 #	GENERATE EXECUTABLES
 #-------------------------------------------------------------------------------
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
+    CONFIGURATIONS Debug)
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release
+    CONFIGURATIONS Release)
+
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_LIBRARY (${PROJ_NAME} SHARED ${PROJ_SOURCES})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
