@@ -5,11 +5,29 @@
 using namespace ::Foo;
 //namespace {
 
-// SampleRate Class test 
-TEST(sampleTest, getSam)
+class SampleTest : public ::testing::Test
 {
-    Sample sm(11);
-    int value = sm.getSam();
-    ASSERT_EQ(value, 11);
+public:
+    SampleTest() {}
+    virtual ~SampleTest() {}
+
+protected:
+     Sample * sm;
+ 
+     virtual void SetUp()
+     {      
+         sm = new Sample(11);
+     }
+
+     virtual void TearDown()
+     {
+        delete sm;
+     }
+};
+
+TEST_F(sampleTest, smTest)
+{
+    ASSERT_EQ(*sm.getSam(), 11);
 }
+
 //}
