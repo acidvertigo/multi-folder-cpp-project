@@ -45,11 +45,11 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 #	GENERATE EXECUTABLES
 #-------------------------------------------------------------------------------
-INSTALL(TARGETS sample
+INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
     CONFIGURATIONS Debug)
-INSTALL(TARGETS sample
+INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release
     LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release
     CONFIGURATIONS Release)
