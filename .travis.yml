@@ -20,12 +20,14 @@ script:
   - gcc -v && g++ -v && cmake --version
   - mkdir build && mkdir build/Debug && mkdir build/Release
   - cd build/Debug
-  - cmake -D CMAKE_BUILD_TYPE=Debug .
+  - cmake -D CMAKE_BUILD_TYPE=Debug ../../
   - make
   - ctest
   - cd ../Release
-  - cmake -D CMAKE_BUILD_TYPE=Release .
+  - cmake -D CMAKE_BUILD_TYPE=Release ../../
   - make
   - ctest
   - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ -ibuild/Release/googletest-src/  -ibuild/Release/CMakeFiles/ -ibuild/Debug/CMakeFiles/ -I../../inc/ ../../
+  - cd ../..
+  - ls
   - ./app
