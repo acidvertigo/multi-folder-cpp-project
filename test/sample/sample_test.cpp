@@ -25,7 +25,7 @@ protected:
      }
 };
 
-TEST_F(sampleTest, smTest)
+TEST_F(SampleTest, smTest)
 {
     ASSERT_EQ(*sm.getSam(), 11);
 }
