@@ -27,5 +27,5 @@ script:
   - cmake -D CMAKE_BUILD_TYPE=Release ../../
   - make
   - ctest
-  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ build/Release/googletest-src/  build/Release/CMakeFiles/ -I ../../inc/ ../../
+  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -ibuild/Debug/googletest-src/ -ibuild/Release/googletest-src/  -ibuild/Release/CMakeFiles/ -ibuild/Debug/CMakeFiles/ -I../../inc/ ../../
   - ./app
