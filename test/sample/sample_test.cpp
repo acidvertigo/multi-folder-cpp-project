@@ -27,7 +27,7 @@ protected:
 
 TEST_F(SampleTest, smTest)
 {
-    ASSERT_EQ(*sm.getSam(), 11);
+    ASSERT_EQ(*sm->getSam(), 11);
 }
 
 //}
