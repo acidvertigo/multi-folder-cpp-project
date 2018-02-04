@@ -52,8 +52,10 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
-set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_DEBUG program-debug )
-set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_RELEASE program-release )
+
+set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_DEBUG app-debug )
+set_target_properties( ${PROJ_NAME} PROPERTIES OUTPUT_NAME_RELEASE app )
+
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 # Use the automatically determined RPATH values

@@ -21,11 +21,11 @@ script:
   - gcc -v && g++ -v && cmake --version
   - mkdir build && mkdir build/Debug && mkdir build/Release
   - cd build/Debug
-  - cmake -D CMAKE_BUILD_TYPE=Debug ../../
+  - cmake -D CMAKE_BUILD_TYPE=Debug ../../ --config Debug
   - make
   - ctest
   - cd ../Release
-  - cmake -D CMAKE_BUILD_TYPE=Release ../../
+  - cmake -D CMAKE_BUILD_TYPE=Release ../../ --config Release
   - make && make install
   - ctest
   - cd ../../
