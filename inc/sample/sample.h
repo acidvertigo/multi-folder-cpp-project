@@ -9,7 +9,7 @@ class Sample
 {
 
 public:
-  Sample(int rhs);
+  SAMPLE_EXPORT Sample(int rhs);
   virtual ~Sample() = default;
   int SAMPLE_EXPORT getSam() const;
   
