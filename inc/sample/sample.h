@@ -5,7 +5,7 @@
 
 namespace Foo {
 
-class SAMPLE_EXPORT Sample 
+class Sample 
 {
 
 public:
