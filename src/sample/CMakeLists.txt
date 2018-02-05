@@ -3,6 +3,8 @@
 #-------------------------------------------------------------------------------
 CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+SET(CMAKE_CXX_VISIBILITY_PRESET hidden)
+SET(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
 #-------------------------------------------------------------------------------
 #	PROJECT SETTINGS
@@ -13,8 +15,6 @@ SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
 SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc ${CMAKE_BINARY_DIR}/exports)
 PROJECT( ${PROJ_NAME} )
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
