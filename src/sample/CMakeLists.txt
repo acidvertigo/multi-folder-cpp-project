@@ -50,14 +50,14 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_LIBRARY (${PROJ_NAME} SHARED ${PROJ_SOURCES})
+# generate export header
+INCLUDE( GenerateExportHeader )
+GENERATE_EXPORT_HEADER(sample)
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
-install(FILES
- ${CMAKE_BINARY_DIR}/sample_export.h DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
-)
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
     ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug

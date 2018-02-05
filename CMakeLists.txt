@@ -55,9 +55,6 @@ endif(MSVC)
 include_directories("${PROJECT_BINARY_DIR}")
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
-# generate export header
-INCLUDE( GenerateExportHeader )
-GENERATE_EXPORT_HEADER(sample)
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 # Add debug postfix to executable name
