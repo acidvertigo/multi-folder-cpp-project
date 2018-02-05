@@ -11,7 +11,10 @@ SET( PROJ_NAME      "app" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "sample" )
-SET( PROJ_INCLUDES  "inc" )
+SET( PROJ_INCLUDES 
+  inc
+  ${CMAKE_BINARY_DIR}/exports
+)
 PROJECT( ${PROJ_NAME} )
 ENABLE_TESTING()
 
@@ -52,7 +55,6 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-include_directories(${PROJECT_BINARY_DIR})
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
