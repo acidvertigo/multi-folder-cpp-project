@@ -1,6 +1,10 @@
 #ifndef _SAMPLE_H_
 #define _SAMPLE_H_
 
+#include "sample_export.h"
+
+void SAMPLE_EXPORT f();
+
 namespace Foo {
 
 class Sample 

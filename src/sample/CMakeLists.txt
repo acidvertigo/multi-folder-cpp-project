@@ -47,6 +47,15 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_LIBRARY (${PROJ_NAME} SHARED ${PROJ_SOURCES})
+
+# generate export header
+include (GenerateExportHeader)          
+GENERATE_EXPORT_HEADER(${PROJ_NAME}
+    BASE_NAME ${PROJ_NAME}
+    EXPORT_MACRO_NAME ${PROJ_NAME}_export.h
+    EXPORT_FILE_NAME ${PROJ_NAME}_export.h
+    STATIC_DEFINE ${PROJ_NAME}_EXPORTS_BUILT_AS_STATIC)
+
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 #-------------------------------------------------------------------------------
