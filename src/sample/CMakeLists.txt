@@ -47,6 +47,8 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_LIBRARY (${PROJ_NAME} SHARED ${PROJ_SOURCES})
+# generate export header
+generate_export_header(${PROJECT_NAME})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 
 #-------------------------------------------------------------------------------
