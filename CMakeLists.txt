@@ -52,7 +52,7 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-include_directories("${PROJECT_BINARY_DIR}")
+include_directories(${PROJECT_BINARY_DIR})
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
