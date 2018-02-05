@@ -3,11 +3,9 @@
 
 #include "sample_export.h"
 
-void SAMPLE_EXPORTS f();
-
 namespace Foo {
 
-class Sample 
+class SAMPLE_EXPORTS Sample 
 {
 
 public:
