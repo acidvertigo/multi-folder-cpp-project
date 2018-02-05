@@ -3,7 +3,9 @@
 
 namespace Foo {
 
-class Sample {
+class Sample 
+{
+
 public:
   Sample(int rhs);
   virtual ~Sample() = default;
@@ -11,6 +13,7 @@ public:
   
 protected:
   int sam;
+
 };
 
 }
