@@ -11,7 +11,7 @@ class SAMPLE_EXPORT Sample
 public:
   Sample(int rhs);
   virtual ~Sample() = default;
-  int SAMPLE_NO_EXPORT getSam() const;
+  int SAMPLE_EXPORT getSam() const;
   
 protected:
   int sam;
