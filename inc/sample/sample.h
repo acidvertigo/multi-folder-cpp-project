@@ -1,7 +1,7 @@
 #ifndef _SAMPLE_H_
 #define _SAMPLE_H_
 
-#include "sample_export.h"
+#include "sample/sample_export.h"
 
 namespace Foo {
 
