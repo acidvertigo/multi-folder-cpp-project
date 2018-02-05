@@ -13,6 +13,8 @@ SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
 SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc )
 PROJECT( ${PROJ_NAME} )
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
@@ -32,7 +34,8 @@ FILE( GLOB_RECURSE PROJ_HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 
 #-------------------------------------------------------------------------------
 #	COMPILE FLAGS
-#-------------------------------------------------------------------------------SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+#-------------------------------------------------------------------------------
+SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 SET(CMAKE_CXX_STANDARD 17)
 
 if(MSVC)
@@ -53,7 +56,7 @@ TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
 install(FILES
- ${PROJECT_BINARY_DIR}/sample_export.h DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
+ ${CMAKE_BINARY_DIR}/sample_export.h DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
 )
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
