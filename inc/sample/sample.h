@@ -1,9 +1,9 @@
 #ifndef _SAMPLE_H_
 #define _SAMPLE_H_
 
-#include "sample/sample_export.h"
+#include "sample_export.h"
 
-void SAMPLE_EXPORT f();
+void SAMPLE_EXPORTS f();
 
 namespace Foo {
 
