@@ -52,6 +52,9 @@ TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
+install(FILES
+ ${PROJECT_BINARY_DIR}/sample_export.h DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
+)
 INSTALL(TARGETS ${PROJ_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
     ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
