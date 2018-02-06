@@ -1,4 +1,4 @@
-#include "sample/sample.h"
+#include "shared/shared.h"
 
 using namespace Foo;
 
