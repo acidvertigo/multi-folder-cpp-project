@@ -1,8 +1,13 @@
 #-------------------------------------------------------------------------------
 #	CMAKE SETTINGS
 #-------------------------------------------------------------------------------
-CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
+CMAKE_MINIMUM_REQUIRED( VERSION 3.9 )
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+#needed to set project version
+if(POLICY CMP0048)
+  cmake_policy(SET CMP0048 NEW)
+endif()
 
 #-------------------------------------------------------------------------------
 #	PROJECT SETTINGS

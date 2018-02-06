@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 #	CMAKE SETTINGS
 #-------------------------------------------------------------------------------
-CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
+CMAKE_MINIMUM_REQUIRED( VERSION 3.9 )
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 SET(CMAKE_CXX_VISIBILITY_PRESET hidden)
 SET(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
