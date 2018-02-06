@@ -30,5 +30,9 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+# include export headers for shared libraries
 include_directories(${CMAKE_BINARY_DIR}/exports/)
+
+# import test directories
 ADD_SUBDIRECTORY(shared/)
+ADD_SUBDIRECTORY(static/)
