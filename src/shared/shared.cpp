@@ -2,10 +2,10 @@
 
 using namespace Foo;
 
-Sample::Sample(int rhs) : sam(10) {
+Shared::Shared(int rhs) : sam(10) {
   sam = rhs;
 }
 
-int Sample::getSam() const {
+int Shared::getSam() const {
   return sam;
 }
