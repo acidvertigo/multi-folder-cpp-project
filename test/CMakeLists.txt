@@ -31,4 +31,4 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 include_directories(${CMAKE_BINARY_DIR}/exports/)
-ADD_SUBDIRECTORY(sample/)
+ADD_SUBDIRECTORY(shared/)
