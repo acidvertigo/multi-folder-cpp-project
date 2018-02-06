@@ -30,6 +30,6 @@ script:
   - ctest
   - cd ../../
   - rm -rf build
-  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -Ibuild/exports -Iinc/ .
+  - cppcheck --enable=all --suppress=missingIncludeSystem --check-config --error-exitcode=1 --std=c++11 --verbose --language=c++ -Iinc/ .
   - tree -a -C -s -I ".git"
   - bin/Debug/app-debug && bin/Release/app
