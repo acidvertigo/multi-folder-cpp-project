@@ -9,7 +9,7 @@ SET(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 #-------------------------------------------------------------------------------
 #	PROJECT SETTINGS
 #-------------------------------------------------------------------------------
-SET( PROJ_NAME      "sample" )
+SET( PROJ_NAME      "shared" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
