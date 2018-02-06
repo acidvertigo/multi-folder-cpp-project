@@ -7,7 +7,7 @@ class SharedTest : public ::testing::Test
 {
 public:
     SharedTest() {}
-    virtual ~SampleTest() {}
+    virtual ~SharedTest() {}
 
 protected:
      Shared * sm;
