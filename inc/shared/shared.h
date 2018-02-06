@@ -10,7 +10,7 @@ class Shared
 
 public:
   SHARED_EXPORT Shared(int rhs);
-  virtual ~Shared() = default;
+  virtual SHARED_EXPORT ~Shared() = default;
   int SHARED_EXPORT getSam() const;
   
 protected:
