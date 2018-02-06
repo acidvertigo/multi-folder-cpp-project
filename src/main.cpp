@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sample/sample.h"
+#include "shared/shared.h"
 
 using namespace std;
 using namespace Foo;
