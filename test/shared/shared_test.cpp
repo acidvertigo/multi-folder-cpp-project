@@ -3,18 +3,18 @@
 
 using namespace ::Foo;
 
-class SampleTest : public ::testing::Test
+class SharedTest : public ::testing::Test
 {
 public:
-    SampleTest() {}
+    SharedTest() {}
     virtual ~SampleTest() {}
 
 protected:
-     Sample * sm;
+     Shared * sm;
  
      virtual void SetUp() override
      {      
-         sm = new Sample(11);
+         sm = new Shared(11);
      }
 
      virtual void TearDown() override
@@ -23,7 +23,7 @@ protected:
      }
 };
 
-TEST_F(SampleTest, smTest)
+TEST_F(SharedTest, smTest)
 {
     ASSERT_EQ(sm->getSam(), 11);
 }
