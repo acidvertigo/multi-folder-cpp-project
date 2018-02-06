@@ -7,29 +7,18 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 #-------------------------------------------------------------------------------
 #	PROJECT SETTINGS
 #-------------------------------------------------------------------------------
-SET( PROJ_NAME      "app" )
+SET( PROJ_NAME      "static" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
-SET( PROJ_LIBRARIES 
-  shared
-  static
-)
-SET( PROJ_INCLUDES 
-  inc
-  ${CMAKE_BINARY_DIR}/exports
-)
+SET( PROJ_LIBRARIES "" )
+SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc ${CMAKE_BINARY_DIR}/exports)
 PROJECT( ${PROJ_NAME} )
-ENABLE_TESTING()
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
 #-------------------------------------------------------------------------------
-FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
-FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
-
-ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/shared/ )
-ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/static/ )
-ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/test/ )
+FILE( GLOB_RECURSE PROJ_SOURCES *.cpp )
+FILE( GLOB_RECURSE PROJ_HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 
 #-------------------------------------------------------------------------------
 #	ADDITIONAL LIBRARIES
@@ -57,31 +46,20 @@ endif(MSVC)
 #-------------------------------------------------------------------------------
 #	GENERATE EXECUTABLES
 #-------------------------------------------------------------------------------
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
 INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
-ADD_EXECUTABLE( ${PROJ_NAME} ${PROJ_SOURCES} ${PROJ_SOURC})
+ADD_LIBRARY (${PROJ_NAME} STATIC ${PROJ_SOURCES})
 TARGET_LINK_LIBRARIES( ${PROJ_NAME} ${PROJ_LIBRARIES} )
-
-# Add debug postfix to executable name
-SET_TARGET_PROPERTIES(app PROPERTIES DEBUG_POSTFIX "-debug")
-
-# Use the automatically determined RPATH values
-set_target_properties(${PROJ_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 #-------------------------------------------------------------------------------
 #	DEFINE INSTALL FOLDERS
 #-------------------------------------------------------------------------------
-IF(CMAKE_BUILD_TYPE MATCHES "Release")
-    INSTALL(TARGETS ${PROJ_NAME}
-        RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release/
-        LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release/
-        CONFIGURATIONS Release)
-ELSE(CMAKE_BUILD_TYPE MATCHES "Release")
-    INSTALL(TARGETS ${PROJ_NAME}
-        RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug/
-        LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug/
-        CONFIGURATIONS Debug)
-ENDIF(CMAKE_BUILD_TYPE MATCHES "Release")
-
-INCLUDE(InstallRequiredSystemLibraries)
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Debug
+    ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Debug
+    CONFIGURATIONS Debug)
+INSTALL(TARGETS ${PROJ_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin/Release
+    ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release
+    LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib/Release
+    CONFIGURATIONS Release)
