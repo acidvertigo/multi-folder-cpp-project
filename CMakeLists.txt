@@ -10,7 +10,7 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 SET( PROJ_NAME      "app" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
-SET( PROJ_LIBRARIES "sample" )
+SET( PROJ_LIBRARIES "shared" )
 SET( PROJ_INCLUDES 
   inc
   ${CMAKE_BINARY_DIR}/exports
@@ -24,7 +24,7 @@ ENABLE_TESTING()
 FILE( GLOB_RECURSE PROJ_SOURCES src/*.cpp )
 FILE( GLOB_RECURSE PROJ_HEADERS inc/*.h )
 
-ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/sample/ )
+ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/src/shared/ )
 ADD_SUBDIRECTORY( ${CMAKE_SOURCE_DIR}/test/ )
 
 #-------------------------------------------------------------------------------
