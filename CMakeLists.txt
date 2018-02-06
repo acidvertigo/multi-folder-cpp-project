@@ -18,7 +18,7 @@ SET( PROJ_INCLUDES
   inc
   ${CMAKE_BINARY_DIR}/exports
 )
-PROJECT( ${PROJ_NAME} )
+PROJECT( ${PROJ_NAME} VERSION 0.0.1 )
 ENABLE_TESTING()
 
 #-------------------------------------------------------------------------------

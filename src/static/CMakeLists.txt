@@ -12,7 +12,7 @@ SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
 SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc ${CMAKE_BINARY_DIR}/exports)
-PROJECT( ${PROJ_NAME} )
+PROJECT( ${PROJ_NAME} VERSION 0.0.1 )
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
