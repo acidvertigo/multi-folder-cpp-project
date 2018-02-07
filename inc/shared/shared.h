@@ -5,13 +5,13 @@
 
 namespace Foo {
 
-class Shared 
+class SHARED_EXPORT Shared 
 {
 
 public:
-  SHARED_EXPORT Shared(int rhs);
-  virtual SHARED_EXPORT ~Shared() = default;
-  int SHARED_EXPORT getSam() const;
+  Shared(int rhs);
+  ~Shared() = default;
+  int getSam() const;
   
 protected:
   int sam;
