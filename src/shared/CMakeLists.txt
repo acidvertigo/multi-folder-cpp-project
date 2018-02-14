@@ -15,6 +15,7 @@ SET( PROJ_OUT_PATH  ${CMAKE_BINARY_DIR} )
 SET( PROJ_LIBRARIES "" )
 SET( PROJ_INCLUDES  ${CMAKE_SOURCE_DIR}/inc ${CMAKE_BINARY_DIR}/exports)
 PROJECT( ${PROJ_NAME} VERSION 0.0.1 )
+ADD_DEFINITIONS( -DSHARED_EXPORT )
 
 #-------------------------------------------------------------------------------
 #	SOURCE CODE
